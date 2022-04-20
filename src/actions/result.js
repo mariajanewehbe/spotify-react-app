@@ -16,9 +16,9 @@ import {
   export const initiateGetResult = (searchKey) => {
     return async (dispatch) => {
       try {
-        const API_URL = `https://api.spotify.com/v1/search?query=${encodeURIComponent(
+        const API_URL = `https://api.spotify.com/v1/search?q=${encodeURIComponent(
           searchKey
-        )}&type=artist`;
+        )}&type=artist&market=US`;
         const result = await get(API_URL);
         console.log(result);
         const { artists} = result;
